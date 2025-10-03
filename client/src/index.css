@@ -1,0 +1,126 @@
+/* ----------------------------------------------------------------
+ * MEDIBOT THEME: Soft Light Background with Violet Accents
+ * ---------------------------------------------------------------- */
+:root {
+    /* COLORS */
+    --color-bg-light: #f7f9fc;               /* Very light background */
+    --color-accent-violet: #8a2be2;          /* Blue Violet accent */
+    --color-success-blue: #4169e1;           /* Success / Taken dose */
+    --color-error-red: #dc143c;              /* Error / Missed dose */
+    --color-text-dark: #333333;              /* Dark text */
+    --color-text-subtle: #6c757d;            /* Gray paragraph text */
+    --color-text-light: #f5f5f5;             /* Light text for dark mode */
+    --color-card-light: rgba(255, 255, 255, 0.9); /* Card background */
+
+    /* FONTS */
+    font-family: 'Times New Roman', Lora, serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+
+    /* GLOBAL STYLING */
+    color-scheme: light;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Links / Anchors --- */
+a {
+    font-weight: 600;
+    color: var(--color-accent-violet);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #a968eb; /* lighter violet */
+    text-decoration: underline;
+}
+
+/* --- Base HTML / Body --- */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Headings --- */
+h1 {
+    font-size: 3.5em;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+
+/* --- Buttons --- */
+button {
+    border-radius: 8px;
+    border: 1px solid var(--color-accent-violet);
+    padding: 0.7em 1.4em;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: var(--color-card-light, #fff);
+    color: var(--color-accent-violet);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+    border-color: var(--color-accent-violet);
+    color: white;
+    background-color: var(--color-accent-violet);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+button:focus,
+button:focus-visible {
+    outline: none;
+    border-color: var(--color-success-blue);
+    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.3);
+}
+
+/* --- Card Utility --- */
+.card {
+    background-color: var(--color-card-light, #fff);
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1em;
+}
+
+/* --- Text Utilities --- */
+.read-the-docs {
+    color: var(--color-text-subtle);
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: var(--color-text-light);
+        background-color: #1a1a2e;
+        --color-text-dark: var(--color-text-light);
+        --color-card-light: #24243d;
+    }
+    a {
+        color: var(--color-accent-violet);
+    }
+    button {
+        background-color: #1a1a2e;
+        color: var(--color-text-light);
+    }
+    button:hover {
+        color: white;
+        background-color: var(--color-accent-violet);
+    }
+}

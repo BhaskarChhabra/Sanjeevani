@@ -1,0 +1,82 @@
+:root {
+  /* MediBot-Inspired Colors */
+  --color-primary: #7d44e7; /* Vibrant Purple (from MediBot button) */
+  --color-text-dark: #2c3e50; /* Very Dark Gray/Blue for main text */
+  --color-text-subtle: #667788; /* Softer Gray for secondary text/docs */
+  --color-background: #ffffff; /* Clean White background */
+  
+  /* Original Accent Colors (used for logo hover, etc.) */
+  --color-accent-blue: #646cffaa; 
+  --color-accent-teal: #61dafbaa;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--color-background); /* Applied background color */
+  color: var(--color-text-dark); /* Applied main text color */
+}
+
+/* --- General Text and Link Styles --- */
+a {
+  color: var(--color-primary); /* Use the primary purple for links */
+}
+
+/* --- Button Style (Example) --- */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-background); /* White text on purple button */
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #6a3abf; /* Slightly darker purple on hover */
+}
+
+/* --- Logo Styles --- */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  /* Using original blue hover for consistency with existing CSS */
+  filter: drop-shadow(0 0 2em var(--color-accent-blue)); 
+}
+.logo.react:hover {
+  /* Using original teal hover for consistency with existing CSS */
+  filter: drop-shadow(0 0 2em var(--color-accent-teal));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  border: 1px solid #eee; /* Light border for the card */
+  border-radius: 12px;
+}
+
+.read-the-docs {
+  color: var(--color-text-subtle); /* Applied subtle text color */
+}
