@@ -17,7 +17,6 @@ connection()
     const PORT = process.env.PORT || 5000;
     const httpServer = http.createServer(app);
 
-    // Initialize Socket.io
     const io = initializeSocket(httpServer);
 
     // Handle new socket connections
