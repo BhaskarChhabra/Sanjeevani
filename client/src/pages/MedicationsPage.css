@@ -1,0 +1,341 @@
+/* MedicationsPage.css */
+
+/* --- Page Layout --- */
+.meds-page-container {
+    padding: 2rem 3rem;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+}
+
+/* --- Dashboard Header --- */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8b5cf6; /* Purple */
+    margin: 0;
+}
+
+.dashboard-subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.adherence-section {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.adherence-section p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fg {
+    height: 100%;
+    background-color: #22c55e; /* Green */
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+
+.main-search-bar {
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* --- Actions Card (Google Sync & Add Med) --- */
+.actions-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07);
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.actions-card-img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+}
+
+.actions-card-content {
+    flex-grow: 1;
+}
+
+.actions-card-content h2 {
+    font-size: 1.75rem;
+    color: #8b5cf6; /* Purple */
+    margin: 0 0 0.5rem 0;
+}
+
+.actions-card-content p {
+    color: #4b5563;
+    margin: 0;
+}
+
+.actions-card-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-google-disconnect {
+    background-color: #fee2e2 !important;
+    color: #dc2626 !important;
+}
+
+.btn-add-med {
+    background-color: #6366f1 !important;
+    color: #fff !important;
+}
+
+
+/* --- Medication Grid --- */
+.meds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Medication Card --- */
+.med-card {
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-top: 5px solid #6366f1; /* Default border color */
+}
+
+.med-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.med-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8b5cf6; /* Purple */
+    margin: 0;
+}
+
+.med-card-header span {
+    background-color: #eef2ff;
+    color: #4338ca;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+/* Weekly Adherence Section */
+.weekly-adherence p {
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 0.75rem 0;
+}
+
+.adherence-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.day-icon-container {
+    text-align: center;
+}
+
+.day-icon-container span {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.adherence-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.adherence-icon::before {
+    content: '';
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.adherence-icon.status-Taken { background-color: #dcfce7; }
+.adherence-icon.status-Taken::before { content: '✓'; color: #16a34a; }
+
+.adherence-icon.status-Missed { background-color: #fee2e2; }
+.adherence-icon.status-Missed::before { content: '✕'; color: #dc2626; }
+
+.adherence-icon.status-Partial,
+.adherence-icon.status-Upcoming { background-color: #fef9c3; }
+.adherence-icon.status-Partial::before,
+.adherence-icon.status-Upcoming::before { content: '~'; color: #ca8a04; }
+
+.adherence-icon.status-NotScheduled { background-color: #f3f4f6; }
+
+
+/* Next Dose Section */
+.next-dose {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+.next-dose p { margin: 0; }
+.next-dose.today { background-color: #fef9c3; color: #a16207; }
+.next-dose.tomorrow { background-color: #e0e7ff; color: #4338ca; }
+
+/* Log Dose Section */
+.log-dose-section p {
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 0.75rem 0;
+}
+
+.log-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.log-entry-done {
+    color: #6b7280;
+    font-style: italic;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.log-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-log {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+}
+.btn-log.taken { background-color: #22c55e; }
+.btn-log.missed { background-color: #ef4444; }
+
+/* Card Footer */
+.med-card-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-edit { background-color: #6366f1 !important; color: #fff !important; flex: 1; }
+.btn-delete { background-color: #e5e7eb !important; color: #374151 !important; flex: 1; }
+/* MedicationsPage.css */
+
+/* --- Page Layout --- */
+.meds-page-container {
+    padding: 2rem 3rem;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+}
+
+/* --- Dashboard Header --- */
+.dashboard-header { text-align: center; margin-bottom: 2rem; }
+.dashboard-title { font-size: 2.5rem; font-weight: 700; color: #8b5cf6; margin: 0; }
+.dashboard-subtitle { font-size: 1.1rem; color: #6b7280; margin-top: 0.5rem; margin-bottom: 2rem; }
+.adherence-section { max-width: 600px; margin: 0 auto 1.5rem auto; }
+.adherence-section p { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+.progress-bar-bg { width: 100%; height: 12px; background-color: #e5e7eb; border-radius: 6px; overflow: hidden; }
+.progress-bar-fg { height: 100%; background-color: #22c55e; border-radius: 6px; transition: width 0.5s ease-in-out; }
+.main-search-bar { width: 100%; max-width: 700px; padding: 1rem; border: 1px solid #d1d5db; border-radius: 12px; font-size: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+
+/* --- Actions Card (Google Sync & Add Med) --- */
+.actions-card { display: flex; align-items: center; background-color: #fff; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07); margin-bottom: 3rem; gap: 2rem; }
+.actions-card-img { width: 120px; height: auto; }
+.actions-card-content { flex-grow: 1; }
+.actions-card-content h2 { font-size: 1.75rem; color: #8b5cf6; margin: 0 0 0.5rem 0; }
+.actions-card-content p { color: #4b5563; margin: 0; }
+.actions-card-buttons { display: flex; gap: 1rem; }
+.btn-google-disconnect, .btn-google-connect, .btn-add-med { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.2s; }
+.btn-google-disconnect:hover, .btn-google-connect:hover, .btn-add-med:hover { transform: translateY(-2px); }
+.btn-google-disconnect { background-color: #fee2e2; color: #dc2626; }
+.btn-add-med, .btn-google-connect { background-color: #6366f1; color: #fff; }
+
+/* --- Medication Grid & Card --- */
+.meds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+.med-card { background-color: #fff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; border-top: 5px solid #6366f1; }
+.med-card-header { display: flex; justify-content: space-between; align-items: center; }
+.med-card-header h3 { font-size: 1.5rem; font-weight: 700; color: #8b5cf6; margin: 0; }
+.med-card-header span { background-color: #eef2ff; color: #4338ca; padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 500; }
+.weekly-adherence p { font-weight: 600; color: #374151; margin: 0 0 0.75rem 0; }
+.adherence-icons { display: flex; justify-content: space-between; }
+.day-icon-container { text-align: center; }
+.day-icon-container span { font-size: 0.75rem; color: #6b7280; margin-top: 0.25rem; display: block; }
+.adherence-icon { width: 28px; height: 28px; border-radius: 50%; position: relative; }
+.adherence-icon::before { content: ''; font-family: 'Arial', sans-serif; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1rem; font-weight: bold; }
+.adherence-icon.status-Taken { background-color: #dcfce7; } .adherence-icon.status-Taken::before { content: '✓'; color: #16a34a; }
+.adherence-icon.status-Missed { background-color: #fee2e2; } .adherence-icon.status-Missed::before { content: '✕'; color: #dc2626; }
+.adherence-icon.status-Partial, .adherence-icon.status-Upcoming { background-color: #fef9c3; } .adherence-icon.status-Partial::before, .adherence-icon.status-Upcoming::before { content: '~'; color: #ca8a04; }
+.adherence-icon.status-NotScheduled { background-color: #f3f4f6; }
+.next-dose { padding: 0.75rem 1rem; border-radius: 12px; font-weight: 500; } .next-dose p { margin: 0; } .next-dose.today { background-color: #fef9c3; color: #a16207; } .next-dose.tomorrow { background-color: #e0e7ff; color: #4338ca; }
+.log-dose-section p { font-weight: 600; color: #374151; margin: 0 0 0.75rem 0; }
+.log-entry { display: flex; justify-content: space-between; align-items: center; background-color: #f9fafb; padding: 0.75rem; border-radius: 8px; margin-bottom: 0.5rem; }
+.log-entry-done { color: #6b7280; font-style: italic; padding: 0.75rem; text-align: center; }
+.log-buttons { display: flex; gap: 0.5rem; }
+.btn-log { border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: 500; color: white; } .btn-log.taken { background-color: #22c55e; } .btn-log.missed { background-color: #ef4444; }
+.med-card-footer { margin-top: auto; padding-top: 1rem; border-top: 1px solid #f3f4f6; display: flex; gap: 0.75rem; }
+.btn-edit, .btn-delete { padding: 0.75rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; flex: 1; }
+.btn-edit { background-color: #6366f1; color: #fff; } .btn-delete { background-color: #e5e7eb; color: #374151; }
+
+/* --- MODAL STYLING (Naya Add Hua Hai) --- */
+.modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { background-color: white; padding: 2rem; border-radius: 16px; width: 100%; max-width: 500px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.modal-header h2 { margin: 0; font-size: 1.5rem; color: #374151; }
+.modal-close-btn { background: none; border: none; font-size: 2rem; cursor: pointer; color: #9ca3af; }
+.modal-form .form-group { margin-bottom: 1rem; }
+.modal-form label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #4b5563; }
+.modal-form input, .modal-form select { width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 1rem; }
+.time-input-group { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.time-input-group input { flex-grow: 1; }
+.btn-remove-time, .btn-add-time { padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #d1d5db; background-color: #f9fafb; cursor: pointer; }
+.modal-footer { margin-top: 2rem; text-align: right; }
+.btn-submit { background-color: #6366f1; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }

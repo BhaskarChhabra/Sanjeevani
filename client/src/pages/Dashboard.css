@@ -1,0 +1,273 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.dash-container {
+  padding: 2rem 3rem;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  color: #1e1e1e;
+  line-height: 1.5;
+}
+
+/* --- User Header --- */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.user-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d1d5db;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.last-active {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  margin-right: 6px;
+}
+
+/* --- Welcome Section --- */
+.welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.welcome-section p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* --- Stats Cards --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.3rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+}
+
+.icon-box {
+  background: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 0.6rem 0 0.2rem 0;
+  color: #111827;
+}
+
+.stat-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.green-text {
+  color: #16a34a;
+}
+
+.excellent {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.good {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.attention {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #16a34a;
+}
+
+/* --- Buttons Row --- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.outline-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.outline-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* --- Bottom Sections Grid --- */
+.bottom-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* --- Reminder Section --- */
+.reminder-section {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.reminder-section h3 {
+  margin-bottom: 1rem;
+}
+
+.reminder-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reminder-section li {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.reminder-section li:last-child {
+  border-bottom: none;
+}
+
+.reminder-time {
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+
+/* --- Recent Activity --- */
+.recent-section {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.recent-section h3 {
+  margin-bottom: 1rem;
+}
+
+.recent-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-section li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+}
+
+.recent-section li:last-child {
+  border-bottom: none;
+}
+
+.no-activity {
+  color: #9ca3af;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .dash-container {
+    padding: 1rem;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .stat-card h2 {
+    font-size: 1.5rem;
+  }
+}
