@@ -291,7 +291,7 @@ const HomePage = () => {
             
             {/* --- THEME TOGGLE BUTTON --- */}
             <button onClick={toggleTheme} style={{
-                position: 'fixed', top: '20px', right: '20px', zIndex: 1000,
+                position: 'fixed', top: '70px', right: '20px', zIndex: 1000,
                 background: theme.cardBg, color: theme.textDark,
                 border: `1px solid ${theme.accentBorder}`, borderRadius: '50%',
                 width: '50px', height: '50px', cursor: 'pointer',
@@ -316,35 +316,145 @@ const HomePage = () => {
                     ↑
                 </button>
             )}
+{/* --- 1. HERO SECTION --- */}
+<section
+    id="top"
+    style={{
+        position: 'relative',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '0 1.5rem',
+        overflow: 'hidden'
+    }}
+>
+    <ParticleCanvas theme={theme} />
 
-            {/* --- 1. HERO SECTION --- */}
-            <section id="top" style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 1.5rem' }}>
-                <ParticleCanvas theme={theme} />
-                <div style={{ ...heroParallaxStyle, zIndex: 2 }}>
-                    <h1 style={{ ...sectionHeadingStyle, fontSize: '4.5rem', color: theme.textDark, textShadow: '0 0 30px rgba(255,255,255,0.3)', lineHeight: 1.1 }}>
-                        Transform Your Health with
-                        <span style={{ 
-                            background: `linear-gradient(45deg, ${theme.primary}, ${theme.secondary})`,
-                            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginLeft: '15px'
-                        }}>
-                            Sanjeevani
-                        </span>
-                    </h1>
-                    <p style={{ ...paragraphStyle, color: theme.textSubtle, fontSize: '1.25rem', marginTop: '1.5rem' }}>
-                        Your AI-powered health companion that simplifies medication management, provides personalized insights, and ensures you never miss a dose.
-                    </p>
-                    <button style={{
-                        background: `linear-gradient(45deg, ${theme.primary}, ${theme.primaryDark})`,
-                        color: 'white', padding: '1.2rem 2.5rem', fontSize: '1.2rem', fontWeight: 'bold',
-                        borderRadius: '50px', border: 'none', cursor: 'pointer', marginTop: '2.5rem',
-                        boxShadow: `0 8px 30px ${theme.primary}70`, transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => { e.target.style.transform = 'scale(1.05)'; e.target.style.boxShadow = `0 12px 40px ${theme.primary}90`; }}
-                    onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; e.target.style.boxShadow = `0 8px 30px ${theme.primary}70`; }}>
-                        Get Started Free
-                    </button>
-                </div>
-            </section>
+    <div style={{ ...heroParallaxStyle, zIndex: 2 }}>
+        <h1
+            style={{
+                ...sectionHeadingStyle,
+                fontSize: '4.5rem',
+                color: theme.textDark,
+                textShadow: '0 0 30px rgba(255,255,255,0.3)',
+                lineHeight: 1.1
+            }}
+        >
+            Transform Your Health with
+            <span
+                className="sexy-word-art"
+                style={{
+                    marginLeft: '15px',
+                    fontWeight: '900',
+                    background: `linear-gradient(270deg, ${theme.primary}, ${theme.secondary}, ${theme.primaryDark}, ${theme.primary})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    display: 'inline-block',
+                    animation: 'gradientText 5s ease infinite, floatText 3s ease-in-out infinite',
+                    textShadow: '0 0 15px rgba(125,68,231,0.7)'
+                }}
+            >
+                Sanjeevani
+            </span>
+        </h1>
+
+        <p
+            style={{
+                ...paragraphStyle,
+                color: theme.textSubtle,
+                fontSize: '1.25rem',
+                marginTop: '1.5rem'
+            }}
+        >
+            Your AI-powered health companion that simplifies medication management,
+            provides personalized insights, and ensures you never miss a dose.
+        </p>
+
+        {/* CRAZY SEXY ANIMATED BUTTON */}
+        <button
+            className="crazy-btn"
+            style={{
+                marginTop: '2.5rem',
+                position: 'relative',
+                padding: '1.2rem 2.8rem',
+                fontSize: '1.25rem',
+                fontWeight: 'bold',
+                borderRadius: '50px',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'white',
+                background: `linear-gradient(90deg, ${theme.primary}, ${theme.secondary}, ${theme.primaryDark})`,
+                backgroundSize: '300% 300%',
+                boxShadow: `0 0 25px ${theme.primary}90`,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                zIndex: 2,
+                animation: 'gradientMove 5s ease infinite, pulse 3s ease-in-out infinite'
+            }}
+            onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.08)';
+                e.target.style.boxShadow = `0 0 40px ${theme.primary}bb`;
+            }}
+            onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.boxShadow = `0 0 25px ${theme.primary}90`;
+            }}
+        >
+            <span style={{ position: 'relative', zIndex: 3 }} onClick={() => window.location.href = "http://localhost:5173/register"}>🚀 Get Started Free</span>
+
+            <span
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: '-75%',
+                    width: '50%',
+                    height: '100%',
+                    background:
+                        'linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)',
+                    transform: 'skewX(-25deg)',
+                    zIndex: 1,
+                    animation: 'shimmer 3s ease-in-out infinite'
+                }}
+            />
+        </button>
+    </div>
+
+    <style>{`
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shimmer {
+            0% { left: -75%; }
+            100% { left: 125%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 25px rgba(125,68,231,0.7); }
+            50% { box-shadow: 0 0 40px rgba(125,68,231,0.9); }
+        }
+
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .crazy-btn:hover {
+            background-size: 400% 400%;
+        }
+    `}</style>
+</section>
+
+
             
             <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
 

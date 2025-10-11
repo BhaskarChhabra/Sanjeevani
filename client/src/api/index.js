@@ -218,4 +218,6 @@ export const verifyResetOtp = (otpData) =>
 export const resetPassword = (resetData) =>
     apiClient.post('/users/reset-password', resetData);
 
-export const updateProfile = (profileData) => apiClient.put('/users/update', profileData);
+// Corrected API functions
+export const getProfile = (userId) => apiClient.get(`/profile/${userId}`);
+export const updateProfile = (userId, profileData) => apiClient.put(`/profile/${userId}`, profileData);

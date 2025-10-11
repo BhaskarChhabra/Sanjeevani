@@ -12,14 +12,7 @@ const COLOR_ACCENT_LINK = "#9333ea";
 const COLOR_CTA_GRADIENT = "linear-gradient(90deg, #6c5ce7 0%, #4A90E2 100%)";
 const COLOR_CTA_HOVER = "linear-gradient(90deg, #4A90E2 0%, #6c5ce7 100%)";
 
-const SanjeevaniBranding = () => (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', marginTop: '0.5rem' }}>
-        <img src="/login/sanjeevani-logo.png" alt="Sanjeevani Logo" style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '1rem', border: `2px solid ${COLOR_ACCENT_LINK}` }} />
-        <span style={{ fontSize: "2.25rem", fontWeight: "800", backgroundImage: `linear-gradient(90deg, ${COLOR_ACCENT_LINK} 0%, #4A90E2 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', color: COLOR_HEADER_TEXT }}>
-            Sanjeevani
-        </span>
-    </div>
-);
+
 
 const CustomInput = ({ label, name, type, value, onChange, placeholder, required }) => (
     <div style={{ marginBottom: '1.25rem', textAlign: 'left', position: 'relative' }}>
@@ -111,7 +104,7 @@ const ForgotPassword = () => {
         <div style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", backgroundImage: 'url(/login/loginbg.png)', backgroundSize: '120%', backgroundPosition: 'center', backgroundColor: COLOR_SOFT_WHITE_BG, display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", overflowY: 'auto' }}>
             <div style={{ background: COLOR_CARD_DARK, padding: "1.5rem 2rem", borderRadius: "2rem", border: "1px solid rgba(255, 255, 255, 0.05)", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.8)", width: "100%", maxWidth: "24rem", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 
-                <SanjeevaniBranding />
+                
 
                 <h2 style={{ fontSize: "1.75rem", fontWeight: "800", marginBottom: "0.25rem", textAlign: "center", color: COLOR_HEADER_TEXT }}>
                     Forgot Password

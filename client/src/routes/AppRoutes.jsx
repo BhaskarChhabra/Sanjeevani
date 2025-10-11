@@ -34,9 +34,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* Public routes with navbar */}
-      <Route path="/local-health-map" element={<LocalHealthMapPage />} />
-      <Route path="/find-medical-services" element={<FindMedicalServicesPage />} />
-          <Route path="/medicine-compare" element={<MedicineComparePage />} />
+      
       <Route 
         path="/" 
         element={
@@ -63,9 +61,13 @@ const AppRoutes = () => {
         <Route path="/chat-history" element={<ChatHistoryPage />} />
         <Route path="/chat/:chatId" element={<ChatSessionPage />} /> 
         <Route path="/profile" element={<ProfilePage />} />
+
         <Route path="/app" element={<Navigate to="/dashboard" replace />} />
         <Route path="/medical-summary" element={<MedicalSummaryPage />} />
         <Route path="/reminder-ai" element={<ReminderAIPage />} />
+        <Route path="/local-health-map" element={<LocalHealthMapPage />} />
+      <Route path="/find-medical-services" element={<FindMedicalServicesPage />} />
+          <Route path="/medicine-compare" element={<MedicineComparePage />} />
  
       </Route>
 

@@ -1,19 +1,29 @@
-// src/store/useAuthStore.js
-
 import { create } from 'zustand';
 
-// Define the store
-const useAuthStore = create((set) => ({
-    // State: The initial data
-    user: null, // Holds user data if logged in, otherwise null
-    isAuthenticated: false, // Tracks if the user is authenticated
+// Helper functions for localStorage
+const saveToStorage = (userData) => {
+    localStorage.setItem('auth', JSON.stringify(userData));
+};
 
-    // Actions: Functions to update the state
-    // We rely on the rest of your application to call the necessary API and pass the data.
-    login: (userData) => set({ user: userData, isAuthenticated: true }),
-    
-    // 🚨 FIX: Ensure the logout function is explicitly defined
-    logout: () => set({ user: null, isAuthenticated: false }),
+const getFromStorage = () => {
+    const stored = localStorage.getItem('auth');
+    return stored ? JSON.parse(stored) : null;
+};
+
+// Create store
+const useAuthStore = create((set) => ({
+    user: getFromStorage(), // restore user on page load
+    isAuthenticated: !!getFromStorage(),
+
+    login: (userData) => {
+        saveToStorage(userData); // persist to localStorage
+        set({ user: userData, isAuthenticated: true });
+    },
+
+    logout: () => {
+        localStorage.removeItem('auth'); // clear storage
+        set({ user: null, isAuthenticated: false });
+    },
 }));
 
 export default useAuthStore;

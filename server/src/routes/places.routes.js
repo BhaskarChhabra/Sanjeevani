@@ -3,7 +3,7 @@ import {
     findNearbyPlaces,
     searchMedicalServices, // --- NEW ---
     getPlaceDetails      // --- NEW ---
-} from "../controllers/places.controller.js";
+} from "../controllers/placesController.js";
 
 const router = Router();
 

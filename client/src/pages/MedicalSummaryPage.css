@@ -1,73 +1,91 @@
-/* --- Global Reset & Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;600;700&display=swap'); /* Added 600, 700 weights */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #333; 
+    color: #333;
 }
 
-/* --- Main Content Container (Fixes Overflow) --- */
-/* This container now represents the main content area, fitting in the 1fr column */
+/* --- MAIN CONTAINER --- */
 .medical-summary-container {
-    /* Light Lavender/Off-White Background applied here */
-    background-color: #f5f0fb; 
-    /* Removed width: 100vw - it now uses the width provided by the grid column */
-    min-height: 100vh;
+    background-color: #f5f0fb;
+    min-height: 100vh; /* ✅ full height, allows page scroll */
     display: flex;
     flex-direction: column;
-    padding: 20px 40px; 
-    box-sizing: border-box; 
-    overflow-x: hidden; /* Ensure content inside doesn't cause overflow */
+    padding: 20px 40px;
+    box-sizing: border-box;
+    overflow-y: auto; /* ✅ enable full page scroll */
 }
-
-/* --- Title Bar (Header) --- */
-/* Title is now left-aligned and centered vertically within its padding, 
-   as it's no longer the huge centered title from previous steps. */
+/* --- HEADER --- */
 .header {
     display: flex;
     align-items: center;
-    padding: 20px 0 30px 0; /* Reduced padding to fit better */
-    justify-content: flex-start; /* Align header text to the left */
+    padding: 20px 0 30px 0;
 }
-
 .header .title {
-    font-size: 1.8rem; /* Slightly smaller title to match dashboard feel */
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #a38ce0; /* Light Purple accent */
+    color: #a38ce0;
     margin: 0;
 }
 
-/* --- Content Panels (Split Layout) --- */
+/* --- PANELS --- */
 .content-panels {
     display: flex;
-    gap: 25px; /* Slightly increased gap for spacing */
+    gap: 25px;
     flex-grow: 1;
-    min-height: calc(100vh - 120px); /* Fill remaining vertical space */
+    overflow: hidden;
 }
 
-/* General Card Styling */
+/* --- PANEL CARD --- */
 .panel-card {
-    background-color: #ffffff; 
-    border-radius: 16px; 
+    background-color: #ffffff;
+    border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); 
-    flex: 1; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Added subtle border to match image */
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Left Panel - Inputs & Button (Remains unchanged) */
+/* --- LEFT PANEL --- */
 .left-panel {
-    min-width: 300px; /* Reduced min-width slightly */
+    min-width: 320px;
+    max-width: 350px;
+    height: 80vh; /* ✅ fixed relative to screen height */
+    flex: none;
+    overflow: hidden; /* ✅ stops it from expanding by content */
 }
 
-/* Input Group (Remains unchanged) */
+/* --- RIGHT PANEL --- */
+.right-panel {
+    flex-grow: 1;
+    height: 80vh; /* ✅ same height as left */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* ✅ no internal scroll, scrolls with page */
+}
+
+/* ✅ SCROLLABLE SUMMARY BOX */
+.summary-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.summary-text-scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+    max-height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #b7a6e6 #f0f0f0;
+}
+
+/* --- INPUTS --- */
 .input-group {
     margin-bottom: 20px;
 }
-
 .input-group label {
     display: block;
     font-weight: 500;
@@ -75,125 +93,129 @@ body {
     color: #555;
     font-size: 0.95rem;
 }
-
-.input-group .char-count {
+.char-count {
     font-size: 0.8rem;
     color: #999;
-    font-weight: 400;
 }
-
-.input-group select,
-.input-group textarea {
+select, textarea {
     width: 100%;
     padding: 10px 12px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    outline: none;
-    background-color: #f9f9f9; 
-    color: #333;
+    background-color: #f9f9f9;
     font-size: 0.95rem;
     resize: none;
     transition: border-color 0.2s;
 }
-
-.input-group select:focus,
-.input-group textarea:focus {
-    border-color: #a38ce0; 
-    background-color: #ffffff;
+select:focus, textarea:focus {
+    border-color: #a38ce0;
+    background-color: #fff;
     box-shadow: 0 0 0 2px rgba(163, 140, 224, 0.3);
 }
 
-/* Button & Delete Button Container */
+/* --- BUTTONS --- */
 .button-container {
     display: flex;
     gap: 10px;
-    margin-top: auto; 
-    padding-top: 20px; /* Added spacing above buttons */
+    margin-top: auto;
+    padding-top: 20px;
 }
-
-/* Generate Button */
 .generate-btn {
     flex-grow: 1;
-    background-color: #b7a6e6; 
-    color: #ffffff;
-    padding: 15px; 
+    background-color: #b7a6e6;
+    color: #fff;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
-.generate-btn .btn-icon {
-    margin-right: 10px;
-    font-size: 1.1rem;
-}
-
 .generate-btn:hover {
     background-color: #a38ce0;
 }
-
 .generate-btn:disabled {
     background-color: #d8cceb;
     cursor: not-allowed;
 }
-
-/* Delete Button */
 .delete-btn {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     color: #666;
-    padding: 15px; 
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: color 0.3s, border-color 0.3s;
 }
-
 .delete-btn:hover {
-    color: #e53e3e; 
+    color: #e53e3e;
     border-color: #e53e3e;
 }
 
-/* --- Right Panel - Empty State Styling --- */
-.empty-summary-state {
+/* --- EMPTY + LOADING STATES --- */
+.empty-summary-state,
+.loading-state {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100%; 
+    height: 100%;
     padding: 20px;
 }
-
-.empty-summary-state .sparkle-icon {
-    /* Adjusted color to match icon in the latest image */
-    color: #c4a7f9; 
+.sparkle-icon {
+    color: #c4a7f9;
     font-size: 3rem;
     margin-bottom: 20px;
-    transform: rotate(15deg); 
+}
+.loader-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.loader-dot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #a38ce0;
+    animation: rotate 2s linear infinite;
+}
+.loader-dot:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    top: 10px;
+    left: 10px;
+    border-top-color: #c4a7f9;
+    border-left-color: #c4a7f9;
+    animation: rotate 1.5s linear infinite reverse;
+}
+.loader-dot:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+    border-top-color: #e0d9f7;
+    border-right-color: #e0d9f7;
+    animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.empty-summary-state h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.empty-summary-state p {
-    font-size: 0.95rem;
-    color: #777;
-    max-width: 300px;
-}
-
-/* Media Query */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .content-panels {
         flex-direction: column;
+    }
+    .left-panel {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }

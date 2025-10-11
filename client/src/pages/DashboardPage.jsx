@@ -364,7 +364,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="stat-card wellbeing-card">
+        {/* <div className="stat-card wellbeing-card">
           <div className="card-header">
             <h4>Wellbeing Meter</h4>
             <div className="icon-box"><FaHeartbeat /></div>
@@ -377,7 +377,7 @@ const Dashboard = () => {
               style={{ width: `${stats.wellbeingScore ?? 0}%` }}
             ></div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* --- Bottom Sections --- */}

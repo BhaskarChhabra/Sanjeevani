@@ -25,7 +25,9 @@ import medicalSummaryRoutes from "./routes/medicalSummary.js";
 // --- ✅ Correct import for your places router ---
 import placesRouter from "./routes/places.routes.js";
 import medicineRouter from './routes/medicine.routes.js';
-import profileRouter from "./routes/profileRoutes.js";
+import profileRoutes from './routes/profileRoutes.js';
+
+
 const API_PREFIX = "/api/v1"; 
 
 
@@ -52,11 +54,12 @@ app.use("/api/v1/medical-summary", medicalSummaryRoutes);
 app.use("/api/environmental-correlation", environmentalRoutes);
 app.use('/api/v1/chat', chatRoutes);
 app.use("/api/v1/reminder-ai", reminderAIRoutes);
+
 // --- in server.js or app.js ---
 
 
 // ... after other route registrations
-app.use("/api/v1/profile", profileRouter);
+app.use("/api/v1/profile", profileRoutes);
 
 // --- ✅ Route registration for the places API ---
 app.use("/api/v1/places", placesRouter);

@@ -15,6 +15,7 @@ import {
     disconnectGoogle,
 } from "../api";
 
+
 // Is component ki CSS file
 import './MedicationsPage.css';
 
@@ -385,7 +386,7 @@ const MedicationsPage = () => {
 
             {/* Google Calendar & Add Med Section */}
             <div className="actions-card">
-                <img src="/calendar-doctor.png" alt="Doctor with Calendar" className="actions-card-img" />
+                <img src="/medication/medicationimg.png" alt="Doctor with Calendar" className="actions-card-img" />
                 <div className="actions-card-content">
                     <h2>Never Miss a Dose Again</h2>
                     <p>Stay on top of your health with smart medication reminders synced to Google Calendar.</p>
