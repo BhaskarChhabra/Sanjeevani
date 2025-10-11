@@ -67,7 +67,7 @@ const inputBlur = (e) => { e.target.style.borderColor = THEME.border; e.target.s
 // ------------------- API Functions -------------------
 const fetchProfile = async (userId) => {
     try {
-        const res = await axios.get(`http://localhost:5000/api/v1/profile/${userId}`, { withCredentials: true });
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1//profile/${userId}`, { withCredentials: true });
         if (res.data.success) return res.data.data;
         return {};
     } catch (err) {
@@ -78,7 +78,7 @@ const fetchProfile = async (userId) => {
 
 const updateProfileAPI = async (userId, data) => {
     try {
-        const res = await axios.put(`http://localhost:5000/api/v1/profile/${userId}`, data, { withCredentials: true });
+        const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/profile/${userId}`, data, { withCredentials: true });
         return res.data;
     } catch (err) {
         console.error('Update profile error:', err);

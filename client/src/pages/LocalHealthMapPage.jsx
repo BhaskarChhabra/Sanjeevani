@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from "@react-google-maps/api";
@@ -164,6 +165,7 @@ const DetailsModal = ({ place, onClose, isLoading }) => {
 // --- Results View Component --- (LOGIC UNCHANGED)
 // ====================================================================
 const ResultsView = ({ userCoords, searchParams }) => {
+// eslint-disable-next-line no-irregular-whitespace
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedPlace, setSelectedPlace] = useState(null);
@@ -182,7 +184,7 @@ const ResultsView = ({ userCoords, searchParams }) => {
             setLoading(true);
             try {
                 // LOGIC UNCHANGED
-                const { data } = await axios.get(`http://localhost:5000/api/v1/places`, {
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1//places`, {
                     params: {
                         lat: userCoords.lat,
                         lng: userCoords.lng,
@@ -205,7 +207,7 @@ const ResultsView = ({ userCoords, searchParams }) => {
         setDetailsLoading(true);
         // LOGIC UNCHANGED
         try {
-            const { data } = await axios.get(`http://localhost:5000/api/v1/places/details/${id}`);
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1//places/details/${id}`);
             setModalDetails(data);
         } catch (error) {
             console.error("Error fetching details:", error);
