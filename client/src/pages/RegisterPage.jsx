@@ -22,7 +22,7 @@ const SanjeevaniBranding = () => (
     marginTop: '0.5rem'
   }}>
     <img
-      src="/login/sanjeevani-logo.png"
+      src="https://i.postimg.cc/8kBV8ktT/5f98ba83-e045-4eec-a3f2-611838a2fb1d.jpg"
       alt="Sanjeevani Logo"
       style={{
         width: '50px',

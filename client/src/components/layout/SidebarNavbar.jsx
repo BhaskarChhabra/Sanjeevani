@@ -105,7 +105,7 @@ const SidebarNavbar = ({ isCollapsed, toggleCollapse }) => {
         <div style={sidebarStyle}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: HEADER_PADDING, borderBottom: `1px solid ${THEME.linkHoverBg}` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', overflow: 'hidden', width: isCollapsed ? '0' : 'auto', opacity: isCollapsed ? 0 : 1 }} onClick={() => navigate('/dashboard')}>
-                    <img src="" alt="Logo" style={{ width: '24px', height: '24px', borderRadius: '50%' }} />
+                    <img src="https://i.postimg.cc/8kBV8ktT/5f98ba83-e045-4eec-a3f2-611838a2fb1d.jpg" alt="Logo" style={{ width: '24px', height: '24px', borderRadius: '50%' }} />
                     <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: THEME.linkText, margin: 0 }}>Sanjeevani</h1>
                 </div>
                 <CollapseIcon onClick={toggleCollapse} style={{ color: THEME.linkIconDefault, cursor: 'pointer', fontSize: '1.25rem', width: '1.25em', height: '1.25em', padding: '0.25rem', borderRadius: '4px' }} onMouseEnter={e => e.currentTarget.style.backgroundColor = THEME.linkHoverBg} onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'} />
