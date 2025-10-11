@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api/v1/reminder-ai"; // Express proxy URL
+const API_BASE_URL =`${import.meta.env.VITE_API_URL}/api/v1//reminder-ai`; // Express proxy URL
 
 export const trainLSTMReminderModel = async (data) => {
   try {

@@ -98,7 +98,7 @@ const ResultsView = ({ userCoords, searchParams }) => {
             setLoading(true); setPlaces([]); setSelectedPlace(null);
             const params = { lat: userCoords.lat, lng: userCoords.lng, radius: searchParams.radius, keyword: searchParams.value };
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/places/search`, { params });
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/`, { params });
                 setPlaces(response.data);
             } catch (error) { console.error("Failed to fetch places:", error); } 
             finally { setLoading(false); }
@@ -109,7 +109,7 @@ const ResultsView = ({ userCoords, searchParams }) => {
     const handleViewDetails = async (placeId) => {
         setIsModalOpen(true); setDetailsLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/v1/places/details/${placeId}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/places/details/${placeId}`);
             setModalDetails(response.data);
         } catch (error) { console.error("Failed to fetch place details:", error); } 
         finally { setDetailsLoading(false); }

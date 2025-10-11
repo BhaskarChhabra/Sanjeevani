@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -31,7 +32,7 @@ const MedicineComparePage = () => {
     setError('');
 
     try {
-      const API_URL = `http://localhost:5000/api/v1/medicines/search?medicine=${searchTerm}`;
+      const API_URL = `${import.meta.env.VITE_API_URL}/api/v1//medicines/search?medicine=${searchTerm}`;
       const response = await axios.get(API_URL);
 
       const data = response.data.data || [];
