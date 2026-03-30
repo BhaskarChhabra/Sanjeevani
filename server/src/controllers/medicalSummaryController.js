@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { extractTextFromResult } from "./aiHelpers.js"; // keep this helper file
 
 // ✅ Your existing API key and model
-const genAI = new GoogleGenerativeAI("AIzaSyA31hP5ku0acmuO0OU7IqIiMnXEefo4Qs4");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const DEFAULT_MODEL = "gemini-2.5-flash";
 
 export const generateMedicalSummary = async (req, res) => {
